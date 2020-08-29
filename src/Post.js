@@ -11,24 +11,24 @@ const Post = ({ displayName, username, verified, text, image, avatar }) => {
   return (
     <div className="post">
       <div className="post__avatar">
-        <Avatar src="https://pbs.twimg.com/profile_images/1263589784183664642/Tt8BH1Ql_400x400.jpg" />
+        <Avatar src={avatar} />
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              David Akpughe{' '}
+              {displayName}
               <span className="post__headerSpecial">
-                <VerifiedUserIcon className="post__badge" /> @davak_01
+                {verified && <VerifiedUserIcon className="post__badge" />} @{username}
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>I challenge you to build a Twitter Clone with React</p>
+            <p>{text}</p>
           </div>
         </div>
         <img
-          src="https://media3.giphy.com/media/65ATdpi3clAdjomZ39/giphy.gif"
+          src={image}
           alt=""
         />
         <div className="post__footer">
